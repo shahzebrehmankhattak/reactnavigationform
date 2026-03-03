@@ -1,0 +1,89 @@
+{
+    "tabs": [
+      { "id": 1, "label": "Application Information" },
+      { "id": 2, "label": "Purpose and Documents" },
+      { "id": 3, "label": "Additional Information" },
+      { "id": 4, "label": "Summary" }
+    ],
+    "fields": [
+      { "id": "name", "label": "Name", "type": "text", "tab": 1, "validation": { "required": true } },
+      { 
+        "id": "email", 
+        "label": "Email Address", 
+        "type": "email", 
+        "tab": 1, 
+        "validation": { 
+          "required": true, 
+          "pattern": "email" 
+        } 
+      },
+      { "id": "city", "label": "City", "type": "text", "tab": 1, "validation": { "required": true } },
+      { 
+        "id": "mobile", 
+        "label": "Mobile Number", 
+        "type": "text", 
+        "tab": 1, 
+        "validation": { 
+          "required": true, 
+          "pattern": "phone" 
+        } 
+      },
+      { "id": "address", "label": "Address", "type": "text", "tab": 1, "validation": { "required": true } },
+      
+      { 
+        "id": "purpose", 
+        "label": "Purpose", 
+        "type": "dropdown", 
+        "tab": 2, 
+        "options": ["Overfly", "Business", "Cargo", "Technical", "Medical", "Training"],
+        "validation": { "required": true } 
+      },
+      { 
+        "id": "filedRoutePlan", 
+        "label": "Filed Route Plan", 
+        "type": "text", 
+        "tab": 2, 
+        "validation": { "required": true },
+        "visibleIf": { "fieldId": "purpose", "value": "Overfly" }
+      },
+      { 
+        "id": "operatingCrew", 
+        "label": "Operating Crew Profile", 
+        "type": "file", 
+        "tab": 2, 
+        "isMulti": true, 
+        "validation": { "required": true },
+        "visibleIf": { "fieldId": "purpose", "value": "Business" }
+      },
+      { 
+        "id": "maintenanceConfirmation", 
+        "label": "Maintenance Confirmation", 
+        "type": "file", 
+        "tab": 2, 
+        "validation": { "required": true },
+        "visibleIf": { "fieldId": "purpose", "value": "Technical" }
+      },
+      { 
+        "id": "medicalFacilityNote", 
+        "label": "Medical Facility Note", 
+        "type": "file", 
+        "tab": 2, 
+        "validation": { "required": true },
+        "visibleIf": { "fieldId": "purpose", "value": "Medical" }
+      },
+      { 
+        "id": "completeATSRoute", 
+        "label": "Complete ATS Route", 
+        "type": "text", 
+        "tab": 2, 
+        "validation": { "required": true },
+        "visibleIf": { "fieldId": "purpose", "value": "Training" }
+      },
+      
+      
+      { "id": "additionalDetails", "label": "Additional Details", "type": "textarea", "tab": 3, "validation": { "required": false } },
+      { "id": "additionalAttachment", "label": "Additional Attachment", "type": "file", "tab": 3, "isMulti": true, "validation": { "required": false } },
+      
+      { "id": "agreement", "label": "Agreement", "type": "checkbox", "tab": 4, "validation": { "required": true } }
+    ]
+  }
