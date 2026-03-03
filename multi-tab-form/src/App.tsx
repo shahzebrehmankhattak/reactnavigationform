@@ -1,4 +1,4 @@
-import { FormContainer } from './pages/FormContainer';
+import FormContainer from "./pages/FormContainer"
 
 function App() {
 
